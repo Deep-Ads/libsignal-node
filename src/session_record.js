@@ -139,7 +139,7 @@ class SessionEntry {
         for (const key of Object.keys(chains_data)) {
             const c = chains_data[key];
             const messageKeys = {};
-            for (const [idx, key] of Object.entries(c.messageKeys)) {
+            for (const [idx, key] of Object.entries(c.messageKeys || {})) {
                 messageKeys[idx] = Buffer.from(key, 'base64');
             }
             r[key] = {
